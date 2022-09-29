@@ -1,0 +1,30 @@
+[monolith]
+instance_name = "check_connect"
+log_file_name = "check_connect"
+registration_db_path = "/tmp/check_connect-registration.db"
+rule_script = "check_connect-rules.lua"
+
+[networking]
+ipv4_address = "0.0.0.0"
+http_port = 9081
+telnet_enabled = true
+telnet_port = 20565
+telnet_access_code = "password123"
+
+[metrics]
+path = "/tmp/check_connect-metrics.db"
+save_metrics = true
+metric_expiration_time_sec = 604800 # 1 week
+stream_metrics = true
+
+[alerts]
+max_alert_sends = 0                # 0 = infinite
+alert_cooldown_seconds = 60.0      # Seconds to cool down per alert id
+
+# Fill in on install to keep out of git
+
+# [twilio]
+# account_sid = ""
+# auth_token = ""
+# from = ""
+# to = []
